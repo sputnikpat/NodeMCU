@@ -1,6 +1,6 @@
 #define BLYNK_TEMPLATE_ID           "TMPL3A4IiljTE"
 #define BLYNK_TEMPLATE_NAME         "Quickstart Device"
-#define BLYNK_AUTH_TOKEN            "owsyWpNPYe24-zNVzAB8MRbND98IS59z"
+#define BLYNK_AUTH_TOKEN            ""
 
 
 #define BLYNK_PRINT Serial
