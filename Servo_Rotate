@@ -1,0 +1,40 @@
+#define BLYNK_TEMPLATE_ID           "TMPL3A4IiljTE"
+#define BLYNK_TEMPLATE_NAME         "Quickstart Device"
+#define BLYNK_AUTH_TOKEN            "owsyWpNPYe24-zNVzAB8MRbND98IS59z"
+
+
+#define BLYNK_PRINT Serial
+
+
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266_SSL.h>
+#include <Servo.h>
+
+// Set password to "" for open networks.
+char ssid[] = "WiFI_02";
+char pass[] = "";
+
+Servo servo;
+
+BLYNK_WRITE(V3)
+{
+  servo.write(param.asInt());
+}
+
+void setup()
+{
+  // Debug console
+  Serial.begin(115200);
+
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+  // You can also specify server:
+  //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, "blynk.cloud", 443);
+  //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, IPAddress(192,168,1,100), 8443);
+
+  servo.attach(9);
+}
+
+void loop()
+{
+  Blynk.run();
+}
