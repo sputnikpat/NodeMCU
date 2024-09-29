@@ -10,7 +10,7 @@
 #include <BlynkSimpleEsp8266_SSL.h>
 #include <Servo.h>
 
-// Set password to "" for open networks.
+
 char ssid[] = "WiFI_02";
 char pass[] = "";
 
@@ -23,11 +23,10 @@ BLYNK_WRITE(V3)
 
 void setup()
 {
-  // Debug console
+  
   Serial.begin(115200);
 
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
-  // You can also specify server:
   //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, "blynk.cloud", 443);
   //Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass, IPAddress(192,168,1,100), 8443);
 
